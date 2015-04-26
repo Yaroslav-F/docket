@@ -2,11 +2,11 @@ module Docket
   module ViewHelpers
     def docket(object, opts = {})
       partial_locals = {
-          ignore: opts[:ignore] || [],
-          calls: opts[:calls] || [],
-          table_class: opts[:table_class] || '',
-          table_style: opts[:table_class] || '',
-          table_id: opts[:table_class] || '',
+        ignore: opts[:ignore] || [],
+        calls: opts[:calls] || [],
+        table_class: opts[:table_class] || '',
+        table_style: opts[:table_class] || '',
+        table_id: opts[:table_class] || ''
       }
 
       if object.respond_to?(:each)
