@@ -9,8 +9,10 @@ Gem::Specification.new do |s|
   s.email       = ['email@alexleaver.co.uk']
   s.homepage    = 'https://github.com/amleaver/docket'
   s.summary     = 'Rails helper for rendering Objects and Collections as HTML tables'
+  s.description = s.summary
+  s.license     = 'MIT'
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['lib/**/*', 'MIT-LICENSE', 'README.rdoc']
 
-  s.add_dependency 'rails', '>= 4.0.9'
+  s.add_runtime_dependency 'rails', '~> 4.0', '>= 4.0.9'
 end
