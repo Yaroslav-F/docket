@@ -1,0 +1,45 @@
+<% if item_counter == 0 %>
+    <table id="<%= table_id %>" class="<%= table_class %>" style="<%= table_style %>">
+      <thead>
+      <tr>
+        <% item.attributes.keys.each do |header| %>
+            <% next if ignore.include?(header.to_sym) %>
+            <th><%= header.titleize %></th>
+        <% end %>
+
+        <% calls.each do |call| %>
+            <th>
+              <% if call.kind_of?(Array) %>
+                  <%= call.last %>
+              <% else %>
+                  <%= call.split('.').last.titleize %>
+              <% end %>
+            </th>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody>
+<% end %>
+
+<tr>
+  <% item.attributes.each do |key, value| %>
+      <% next if ignore.include?(key.to_sym) %>
+      <td><%= value %></td>
+  <% end %>
+  <% calls.each do |call| %>
+      <td>
+        <% if call.kind_of?(Array) %>
+            <%= item.instance_eval(call.first) rescue nil %>
+        <% else %>
+            <%= item.instance_eval(call) rescue nil %>
+        <% end %>
+      </td>
+  <% end %>
+</tr>
+
+<% if item_counter == size - 1 %>
+    </tbody>
+    <tfoot>
+    </tfoot>
+    </table>
+<% end %>

@@ -1,0 +1,33 @@
+<% if object.present? %>
+    <table id="<%= table_id %>" class="<%= table_class %>" style="<%= table_style %>">
+      <thead/>
+      <tbody>
+      <% object.attributes.each do |key, value| %>
+          <% next if ignore.include?(key.to_sym) %>
+          <tr>
+            <td><%= key.humanize %></td>
+            <td><%= value %></td>
+          </tr>
+      <% end %>
+      <% calls.each do |call| %>
+          <tr>
+            <% if call.kind_of?(Array) %>
+                <td>
+                  <%= call.last.humanize %>
+                </td>
+                <td>
+                  <%= object.instance_eval(call.first) rescue nil %>
+                </td>
+            <% else %>
+                <td>
+                  <%= call.humanize %>
+                </td>
+                <td>
+                  <%= object.instance_eval(call) rescue nil %>
+                </td>
+            <% end %>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
