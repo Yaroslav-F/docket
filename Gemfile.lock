@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    docket (0.0.1)
+    docket (0.0.2)
       rails (~> 4.0, >= 4.0.9)
 
 GEM
