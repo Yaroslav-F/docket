@@ -9,7 +9,7 @@ module Docket
       app.config.autoload_paths << app.root.join('lib/docket/partials').to_s
     end
 
-    initializer 'embeddable.add_view_paths', after: :add_view_paths do
+    initializer 'docket.add_view_paths', after: :add_view_paths do
       ActiveSupport.on_load(:action_controller) do
         append_view_path "#{Gem.loaded_specs['docket'].full_gem_path}/lib/docket"
       end
