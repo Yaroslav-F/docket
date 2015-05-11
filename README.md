@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/amleaver/docket.svg?branch=master)](https://travis-ci.org/amleaver/docket)
 # Docket
 ## Overview
 
@@ -21,7 +22,7 @@ From your Rails view call ```docket``` with the following:
         calls: [['fullname'], ['is_admin.humanize', 'Is Admin?']],
         table_class: 'tablesorter',
         table_id: 'user',
-        table_style: 'background-color: white',
+        table_style: 'background-color: white'
     %>
 
 ## License
