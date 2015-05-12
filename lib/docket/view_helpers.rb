@@ -3,7 +3,7 @@ module Docket
     # Helper for rendering an iterable collection or basic object as an HTML table.
     #
     # @param object [Object] an object or iterable collection of objects to render as an HTML table.
-    # @param [Hash] opts optional params for ignoring object attributes, calling object methods and customing the rendered table.
+    # @param [Hash] opts optional params for configuring what attributes are rendered and the styling applied.
     # @option opts [Array] :ignore ([]) list of object attributes which will not be rendered within the table.
     # @option opts [Array] :calls ([]) list of methods to call against the object.
     # @option opts [String] :table_class ('') The class attribute to use for the table.
@@ -11,13 +11,7 @@ module Docket
     # @option opts [String] :table_id ('') The id attribute to use for the table.
     # @return [String] the rendered HTML table for the collection or object.
     def docket(object, opts = {})
-      partial_locals = {
-        ignore: opts[:ignore] || [],
-        calls: opts[:calls] || [],
-        table_class: opts[:table_class] || '',
-        table_style: opts[:table_style] || '',
-        table_id: opts[:table_id] || ''
-      }
+      partial_locals = { ignore: [], calls: [], table_class: '', table_style: '', table_id: '' }.merge(opts)
 
       if object.respond_to?(:each)
         partial_locals[:size] = object.count
