@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/amleaver/docket.svg?branch=master)](https://travis-ci.org/amleaver/docket)
+[![Build Status](https://travis-ci.org/amleaver/docket.svg?branch=master)](https://travis-ci.org/amleaver/docket) [![Coverage Status](https://coveralls.io/repos/amleaver/docket/badge.svg)](https://coveralls.io/r/amleaver/docket)
 # Docket
 ## Overview
 

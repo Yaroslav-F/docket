@@ -1,6 +1,5 @@
 module Docket
   module ViewHelpers
-
     # Helper for rendering an iterable collection or basic object as an HTML table.
     #
     # @param object [Object] an object or iterable collection of objects to render as an HTML table.
