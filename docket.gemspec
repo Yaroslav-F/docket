@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Alex Leaver']
   s.email       = ['email@alexleaver.co.uk']
   s.homepage    = 'https://github.com/amleaver/docket'
-  s.summary     = 'Rails helper for rendering Objects and Collections as HTML tables'
+  s.summary     = 'Rails helper for rendering Rails Model Objects as HTML tables'
   s.description = s.summary
   s.license     = 'MIT'
 
