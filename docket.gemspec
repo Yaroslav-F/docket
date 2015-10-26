@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'docket'
   s.version     = Docket::VERSION
   s.authors     = ['Alex Leaver']
-  s.email       = ['email@alexleaver.co.uk']
+  s.email       = ['amleaver@gmail.com']
   s.homepage    = 'https://github.com/amleaver/docket'
   s.summary     = 'Rails helper for rendering Rails Model Objects as HTML tables'
   s.description = s.summary
